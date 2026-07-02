@@ -140,7 +140,7 @@
 .card {
   background-color: var(--bg-card);
   border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
@@ -167,8 +167,8 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-2xl);
-  margin-top: var(--space-2xl);
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
 }
 
 .cards-3col {
@@ -213,8 +213,8 @@
 .engagement-bullets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-lg);
-  margin-top: var(--space-2xl);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
 }
 
 .bullet-item {
@@ -266,8 +266,8 @@
 .ecosystem-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-2xl);
-  margin-top: var(--space-2xl);
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
 }
 
 .ecosystem-card {
@@ -318,7 +318,7 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
 }
 
 .section-subtitle {
@@ -327,9 +327,9 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .section-content {

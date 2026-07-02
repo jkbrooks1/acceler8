@@ -91,7 +91,7 @@ h1 {
 h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 h3 {
@@ -133,12 +133,12 @@ a:hover {
 
 /* Sections */
 section {
-  padding: var(--space-4xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
   }
 }
 
