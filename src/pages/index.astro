@@ -1,0 +1,453 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+
+declare global {
+  interface Window {
+    scrollToSection: (id: string) => void;
+  }
+}
+---
+
+<Base>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">Acceler8-ai</div>
+      <ul class="nav-menu">
+        <li><a href="#problems">Workflow Problems</a></li>
+        <li><a href="#how-we-work">How We Work</a></li>
+        <li><a href="#network">Our Network</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-cta" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content scroll-fade-in">
+        <h1 class="hero-headline">Workflow problems that move cash. Solved.</h1>
+        <p class="hero-subtitle">Acceler8-ai helps B2B companies select, deploy, and operate workflow technologies from the n8n ecosystem. We focus on revenue-driving problems: invoice cycles, sales velocity, AR follow-up, customer retention, and cash-flow visibility. We connect you with the right technology and implementers to fix them.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
+          <button class="btn btn-secondary" onclick="scrollToSection('how-we-work')">See How We Work</button>
+        </div>
+      </div>
+
+      <div class="hero-visual scroll-fade-in">
+        <div class="workflow-panel">
+          <div class="flow-row">
+            <div class="flow-step">
+              <div class="flow-icon">🎯</div>
+              <p class="flow-label">Identify Problem</p>
+            </div>
+            <div class="flow-arrow">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M8 16H24M20 12L24 16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">🛠️</div>
+              <p class="flow-label">Recommend Tech</p>
+            </div>
+            <div class="flow-arrow">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M8 16H24M20 12L24 16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">🚀</div>
+              <p class="flow-label">Deploy & Operate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow Problems Section -->
+  <section id="problems" class="problem-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Workflow problems where speed and reliability drive revenue.</h2>
+      <div class="cards-grid stagger-children">
+        <div class="card">
+          <div class="card-icon">💵</div>
+          <h3>Invoice Creation & Collection</h3>
+          <p>Delayed invoicing extends your cash cycle. Manual processes create errors and delays. Automated, reliable billing moves cash faster.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Sales Cycle Time</h3>
+          <p>Manual follow-up slows deals. Fragmented systems mean lost leads. Connected workflows keep deals moving and opportunities visible.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📞</div>
+          <h3>AR Follow-Up & Retention</h3>
+          <p>Chasing payments and keeping customers engaged requires coordination across teams. Automated workflows ensure nothing falls through the cracks.</p>
+        </div>
+      </div>
+      <div class="cards-grid stagger-children" style="margin-top: 2rem;">
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>Cash-Flow Visibility</h3>
+          <p>You can't optimize what you can't see. Real-time visibility into revenue, collections, and expenses drives better decisions.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Operations Efficiency</h3>
+          <p>RevOps and finance operations teams are stretched thin. Modern tools and integrations let lean teams punch above their weight.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💼</div>
+          <h3>Scaling Without Headcount</h3>
+          <p>Growth requires operations to scale faster than your team. Workflow automation lets you grow revenue without proportional cost increases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work Section -->
+  <section id="how-we-work" class="services-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">How Acceler8-ai works.</h2>
+      <div class="cards-grid cards-3col stagger-children">
+        <div class="card card-service">
+          <div class="service-number">1</div>
+          <h3>Identify</h3>
+          <p>We listen. What workflow problems are costing you revenue or operational efficiency? We focus on the high-impact ones: the problems that move cash.</p>
+        </div>
+        <div class="card card-service">
+          <div class="service-number">2</div>
+          <h3>Recommend</h3>
+          <p>We know the n8n ecosystem. We recommend n8n-compatible technologies and vetted partners that solve your specific problem. Our opinion comes first, always.</p>
+        </div>
+        <div class="card card-service">
+          <div class="service-number">3</div>
+          <h3>Connect</h3>
+          <p>We connect you with implementers—either our services or trusted partners. We handle deployment, adoption, and handoff so you operate the solution successfully.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Network Section -->
+  <section id="network" class="network-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Our network: vendors and implementers.</h2>
+      <p class="section-subtitle">We maintain relationships with technology vendors and specialized implementers across the n8n ecosystem.</p>
+      <div class="ecosystem-grid stagger-children">
+        <div class="ecosystem-card">
+          <div class="eco-icon">💳</div>
+          <h4>Billing & Finance Vendors</h4>
+          <p>Stripe, QuickBooks, Recurly, and billing platforms that power revenue operations.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">👥</div>
+          <h4>CRM & Sales Systems</h4>
+          <p>Salesforce, HubSpot, Pipedrive, and platforms that manage customer relationships and pipeline.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">📊</div>
+          <h4>Finance Operations Tools</h4>
+          <p>Airtable, data warehouses, analytics platforms, and systems for financial visibility.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">⚙️</div>
+          <h4>n8n Developers</h4>
+          <p>Specialized n8n developers who build custom workflows and integrations.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">💼</div>
+          <h4>RevOps & Operations Experts</h4>
+          <p>Revenue operations and finance operations specialists who understand workflow optimization.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">🔗</div>
+          <h4>n8n Integration Layer</h4>
+          <p>The connective technology that automates workflows and connects your entire tech stack.</p>
+        </div>
+      </div>
+      <p class="section-subtitle" style="margin-top: 3rem; font-size: 1rem;">This model lets us match opportunity to expertise. Client outcomes drive everything.</p>
+    </div>
+  </section>
+
+  <!-- Why Acceler8-ai Section -->
+  <section class="why-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Why Acceler8-ai?</h2>
+      <div class="cards-grid stagger-children">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>We Know What Drives Revenue</h3>
+          <p>We focus on workflow problems that move cash, not nice-to-have optimizations. Every recommendation ties to revenue or operational impact.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Your Opinion Comes First</h3>
+          <p>We represent technology partners, but our opinion on what's right for your business always comes first. We're incentivized by your success.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Network of Experts</h3>
+          <p>We match you with implementers who specialize in your specific problem. Whether n8n developers, RevOps experts, or finance operations specialists—we know them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Positioning Strip -->
+  <section class="positioning-strip scroll-fade-in">
+    <div class="container">
+      <p class="positioning-text">Workflow problems that move cash. Solved through technology partnerships and expert implementation.</p>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="closing-cta scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Ready to fix a workflow problem?</h2>
+      <button class="btn btn-primary btn-large" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Acceler8-ai</h3>
+        <p>Technology selection, deployment, and operations for B2B workflow problems that move cash.</p>
+      </div>
+      <div class="footer-section footer-contact">
+        <p><a href="mailto:connect@acceler8-ai.com">connect@acceler8-ai.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Acceler8-ai. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <style>
+    .positioning-strip {
+      background-color: var(--color-systems-navy);
+      color: var(--text-light);
+      padding: 3rem 0;
+    }
+
+    .positioning-text {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    .closing-cta {
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    .closing-cta .btn {
+      margin-top: var(--space-xl);
+    }
+
+    .problem-section,
+    .services-section,
+    .network-section,
+    .why-section,
+    .closing-cta {
+      background-color: var(--bg-primary);
+    }
+
+    .hero {
+      padding: 5rem 0;
+      background-color: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-headline {
+      color: var(--text-primary);
+      margin-bottom: var(--space-lg);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-2xl);
+      line-height: 1.8;
+    }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .workflow-panel {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(47, 125, 122, 0.05) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      width: 100%;
+    }
+
+    .flow-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .flow-icon {
+      font-size: 2.5rem;
+      display: block;
+    }
+
+    .flow-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+      text-align: center;
+    }
+
+    .flow-arrow {
+      color: var(--accent-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .flow-arrow svg {
+      stroke: var(--accent-secondary);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .workflow-panel {
+        padding: 1.5rem;
+      }
+
+      .flow-row {
+        gap: 0.5rem;
+      }
+
+      .flow-step {
+        min-width: 80px;
+      }
+
+      .flow-icon {
+        font-size: 2rem;
+      }
+
+      .flow-label {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 3rem 0;
+      }
+
+      .hero-headline {
+        font-size: 1.75rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .flow-row {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .flow-step {
+        min-width: 100%;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+      }
+
+      .workflow-panel {
+        padding: 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stagger animations for cards
+    document.querySelectorAll('.stagger-children').forEach(container => {
+      const children = container.querySelectorAll(':scope > *');
+      children.forEach((child, index) => {
+        child.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1 + 0.2}s backwards`;
+      });
+    });
+  </script>
+</Base>

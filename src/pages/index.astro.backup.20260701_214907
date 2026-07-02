@@ -1,0 +1,255 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Base>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">Acceler8-ai</div>
+      <ul class="nav-menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#ecosystem">Ecosystem</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-cta" onclick="scrollToSection('fit-review')">Start a Technology Fit Review</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Problem Section -->
+  <section class="problem-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Most teams do not need more software. They need the right tools working together.</h2>
+      <div class="cards-grid stagger-children">
+        <div class="card">
+          <div class="card-icon">🔀</div>
+          <h3>Tool Sprawl Creates Friction</h3>
+          <p>Disconnected customer and revenue workflows lead to manual data entry, missed updates, and slower revenue cycles.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⏱️</div>
+          <h3>Time Lost to Manual Work</h3>
+          <p>Teams waste hours copying information between systems instead of focusing on customer relationships and growth.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">❓</div>
+          <h3>Buyer Confusion</h3>
+          <p>It's hard to know which platform or partner actually fits your problem, leading to poor tech choices and wasted budgets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section id="services" class="services-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">A practical partner for technology selection, deployment, and connection.</h2>
+      <div class="cards-grid cards-3col stagger-children">
+        <div class="card card-service">
+          <div class="service-number">1</div>
+          <h3>Select</h3>
+          <p>Identify the workflow problems worth solving now and the tools that fit. We help you avoid disconnected tool sprawl by matching your challenges to proven, n8n-compatible solutions.</p>
+        </div>
+        <div class="card card-service">
+          <div class="service-number">2</div>
+          <h3>Deploy</h3>
+          <p>Support setup, configuration, adoption, and handoff. We guide your team through implementation so the new tools integrate smoothly with your existing workflows.</p>
+        </div>
+        <div class="card card-service">
+          <div class="service-number">3</div>
+          <h3>Connect</h3>
+          <p>Use n8n to link systems into practical operating workflows. We turn disconnected tools into integrated business systems that move revenue forward.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Section -->
+  <section id="ecosystem" class="ecosystem-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Built around the n8n partner ecosystem.</h2>
+      <p class="section-subtitle">Acceler8-ai helps clients evaluate and activate n8n-compatible technologies across every function that touches revenue and customer relationships.</p>
+      <div class="ecosystem-grid stagger-children">
+        <div class="ecosystem-card">
+          <div class="eco-icon">👥</div>
+          <h4>CRM and Customer Systems</h4>
+          <p>Salesforce, HubSpot, Pipedrive, and other platforms that manage customer relationships.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">📧</div>
+          <h4>Marketing and Outreach Tools</h4>
+          <p>Email, webinar, and campaign platforms that reach prospects and nurture leads.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">💬</div>
+          <h4>Communication and Team Workflows</h4>
+          <p>Slack, Teams, Discord, and tools that keep teams aligned and informed.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">💰</div>
+          <h4>Finance and Payment Workflows</h4>
+          <p>Stripe, QuickBooks, billing, and accounting systems for revenue and operations.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">📊</div>
+          <h4>Operations and Data Tools</h4>
+          <p>Airtable, data warehouses, and business intelligence for decision-making.</p>
+        </div>
+        <div class="ecosystem-card">
+          <div class="eco-icon">🔗</div>
+          <h4>n8n Automation and Integration Layer</h4>
+          <p>The connective technology that turns platform ecosystems into working business systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- First Engagement Section -->
+  <section id="fit-review" class="engagement-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Start with a Technology Fit Review.</h2>
+      <p class="section-subtitle">A focused first engagement that identifies the workflow problems worth solving now, maps the relevant tool and partner options, and recommends the fastest path to a working integrated system.</p>
+      <div class="engagement-bullets stagger-children">
+        <div class="bullet-item">
+          <span class="bullet-icon">✓</span>
+          <p>Workflow problem review</p>
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-icon">✓</span>
+          <p>Current tool-stack and data-flow map</p>
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-icon">✓</span>
+          <p>n8n-compatible technology recommendations</p>
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-icon">✓</span>
+          <p>Partner/deployment fit assessment</p>
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-icon">✓</span>
+          <p>Quick-win integration roadmap</p>
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-icon">✓</span>
+          <p>Recommended first implementation step</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Model Section -->
+  <section id="process" class="partner-section scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">The right expertise for the right engagement.</h2>
+      <p class="section-content">Acceler8-ai is building a network of qualified deployment partners so each client opportunity can be matched with the right technology, expertise, and implementation capacity.</p>
+    </div>
+  </section>
+
+  <!-- Positioning Strip -->
+  <section class="positioning-strip scroll-fade-in">
+    <div class="container">
+      <p class="positioning-text">An advisor, agent, and deployment partner for companies that need help choosing and activating the right tools.</p>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="closing-cta scroll-fade-in">
+    <div class="container">
+      <h2 class="section-title">Find the right technology path for your next workflow win.</h2>
+      <button class="btn btn-primary btn-large" onclick="scrollToSection('contact')">Start a Technology Fit Review</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Acceler8-ai</h3>
+        <p>Technology selection and deployment partner for the n8n ecosystem.</p>
+      </div>
+      <div class="footer-section footer-contact">
+        <p><a href="mailto:hello@acceler8-ai.com">hello@acceler8-ai.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Acceler8-ai. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <style>
+    .positioning-strip {
+      background-color: var(--color-systems-navy);
+      color: var(--text-light);
+      padding: 3rem 0;
+    }
+
+    .positioning-text {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    .closing-cta {
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    .closing-cta .btn {
+      margin-top: var(--space-xl);
+    }
+
+    .problem-section,
+    .services-section,
+    .ecosystem-section,
+    .engagement-section,
+    .partner-section,
+    .closing-cta {
+      background-color: var(--bg-primary);
+    }
+  </style>
+
+  <script>
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stagger animations for cards
+    document.querySelectorAll('.stagger-children').forEach(container => {
+      const children = container.querySelectorAll(':scope > *');
+      children.forEach((child, index) => {
+        child.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1 + 0.2}s backwards`;
+      });
+    });
+  </script>
+</Base>

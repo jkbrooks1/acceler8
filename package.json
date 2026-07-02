@@ -1,0 +1,20 @@
+{
+  "name": "acceler8-ai-landing",
+  "version": "1.0.0",
+  "description": "Acceler8-ai landing page - Technology selection and deployment partner for n8n ecosystem",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "audit": "grep -r \"BTF\\|CDM\\|BikeTourFrance\\|biketourfrance\\|#A3E635\\|chartreuse\\|neon green\\|highlighter green\\|Accellerate AI\\|Accelerate AI\\|acceler8-ai.net\\|Folex\\|getastrothemes\\|lorem ipsum\\|placeholder\\|dummy\\|John Doe\\|example.com\\|portfolio\\|freelancer\" src/ public/ --exclude-dir=node_modules || echo 'No forbidden strings found'"
+  },
+  "dependencies": {
+    "astro": "^7.0.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.0.0"
+  }
+}
