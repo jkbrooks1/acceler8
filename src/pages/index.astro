@@ -6,6 +6,37 @@ declare global {
     scrollToSection: (id: string) => void;
   }
 }
+
+const STOCK_IMAGES = {
+  heroAtmosphere: {
+    filename: '015.a8Stock.GRAPHIC-ELEMENTS.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/015.a8Stock.GRAPHIC-ELEMENTS.jpg',
+  },
+  workflowSystems: {
+    filename: '009.a8Stock.SYSTEMS.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/009.a8Stock.SYSTEMS.jpg',
+  },
+  processSystems: {
+    filename: '007.a8Stock.SYSTEMS.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/007.a8Stock.SYSTEMS.jpg',
+  },
+  partnershipTeams: {
+    filename: '013.a8Stock.TEAMS.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/013.a8Stock.TEAMS.jpg',
+  },
+  revenueOutcomes: {
+    filename: '006.a8Stock.REVENUE.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/006.a8Stock.REVENUE.jpg',
+  },
+  insightsDataViz: {
+    filename: '004.a8Stock.DATA-VIZ.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/004.a8Stock.DATA-VIZ.jpg',
+  },
+  closingTexture: {
+    filename: '017.a8Stock.GRAPHIC-ELEMENTS.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/017.a8Stock.GRAPHIC-ELEMENTS.jpg',
+  },
+} as const;
 ---
 
 <Base>
@@ -19,18 +50,20 @@ declare global {
         <li><a href="#problems">Workflow Problems</a></li>
         <li><a href="#how-we-work">How We Work</a></li>
         <li><a href="#network">Our Network</a></li>
+        <li><a href="#insights">Insights</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-cta" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
+      <button class="nav-cta" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Start a Review</button>
     </div>
   </nav>
 
-  <!-- Hero Section with Image -->
-  <section class="hero hero-with-image">
-    <div class="hero-image-bg" style="background-image: url('https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/013.a8Stock.TEAMS.jpg')"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-container">
+  <!-- Hero Section -->
+  <section class="hero visual-section visual-section--hero">
+    <img class="visual-section__media" src={STOCK_IMAGES.heroAtmosphere.src} alt="" aria-hidden="true" loading="eager" decoding="async">
+    <div class="visual-section__overlay visual-section__overlay--hero"></div>
+    <div class="hero-container hero-shell">
       <div class="hero-content scroll-fade-in">
+        <p class="eyebrow">Acceler8-ai</p>
         <h1 class="hero-headline">Picking the right workflow tech is hard . . . and it matters</h1>
         <p class="hero-subtitle">Our clients get the right n8n tech and delivery to solve workflow problems that move the cashflow needle.</p>
         <div class="hero-buttons">
@@ -38,14 +71,41 @@ declare global {
           <button class="btn btn-secondary" onclick="scrollToSection('how-we-work')">See How We Work</button>
         </div>
       </div>
+      <div class="hero-visual scroll-fade-in">
+        <div class="workflow-panel hero-panel">
+          <p class="panel-kicker">Workflow focus</p>
+          <div class="hero-panel-grid">
+            <div class="panel-card">
+              <div class="service-number">1</div>
+              <h3>Select</h3>
+              <p>Match the problem to the right tools.</p>
+            </div>
+            <div class="panel-card">
+              <div class="service-number">2</div>
+              <h3>Deploy</h3>
+              <p>Put the system into motion cleanly.</p>
+            </div>
+            <div class="panel-card">
+              <div class="service-number">3</div>
+              <h3>Connect</h3>
+              <p>Turn point solutions into working systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Workflow Problems Section -->
-  <section id="problems" class="problem-section scroll-fade-in" style="background: linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 50%, rgba(215, 25, 32, 0.03) 100%); position: relative;">
-    <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background-image: url('https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/007.a8Stock.SYSTEMS.jpg'); background-size: cover; background-position: center; opacity: 0.15; z-index: 0;"></div>
-    <div class="container" style="position: relative; z-index: 1;">
+  <section id="problems" class="problem-section visual-section visual-section--dark scroll-fade-in">
+    <img class="visual-section__media" src={STOCK_IMAGES.workflowSystems.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="visual-section__overlay visual-section__overlay--dark"></div>
+    <div class="container">
+      <div class="section-intro">
+        <p class="eyebrow">Workflow problems</p>
       <h2 class="section-title">Workflow problems where speed and reliability drive revenue.</h2>
+        <p class="section-subtitle">Most teams do not need more software. They need the right tools working together.</p>
+      </div>
       <div class="cards-grid stagger-children">
         <div class="card">
           <div class="card-icon">💵</div>
@@ -72,10 +132,15 @@ declare global {
   </section>
 
   <!-- How We Work Section -->
-  <section id="how-we-work" class="services-section scroll-fade-in" style="background: linear-gradient(135deg, #FFFFFF 0%, rgba(215, 25, 32, 0.05) 100%); position: relative;">
-    <div style="position: absolute; top: 50%; left: 0; width: 35%; height: 400px; background-image: url('https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/009.a8Stock.SYSTEMS.jpg'); background-size: cover; background-position: center; opacity: 0.12; z-index: 0; transform: translateY(-50%);"></div>
-    <div class="container" style="position: relative; z-index: 1;">
-      <h2 class="section-title">Acceler8-ai</h2>
+  <section id="how-we-work" class="services-section visual-section visual-section--light scroll-fade-in">
+    <img class="visual-section__media" src={STOCK_IMAGES.processSystems.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="visual-section__overlay visual-section__overlay--light"></div>
+    <div class="container">
+      <div class="section-intro section-intro--dark">
+        <p class="eyebrow">How we work</p>
+        <h2 class="section-title">A practical partner for technology selection, deployment, and connection.</h2>
+        <p class="section-subtitle">We know the n8n ecosystem and we recommend technologies and partners that actually fit the problem.</p>
+      </div>
       <div class="cards-grid cards-3col stagger-children">
         <div class="card card-service">
           <div class="service-number">1</div>
@@ -97,19 +162,42 @@ declare global {
   </section>
 
   <!-- Our Network Section -->
-  <section id="network" class="network-section scroll-fade-in" style="position: relative;">
-    <div style="position: absolute; top: 0; right: 0; width: 45%; height: 100%; background-image: url('https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/006.a8Stock.REVENUE.jpg'); background-size: cover; background-position: center; opacity: 0.1; z-index: 0;"></div>
-    <div class="container" style="position: relative; z-index: 1;">
-      <h2 class="section-title">Our network: vendors and implementers.</h2>
-      <p class="section-subtitle">We maintain relationships with technology vendors and specialized implementers across the n8n ecosystem.</p>
+  <section id="network" class="network-section visual-section visual-section--teal scroll-fade-in">
+    <img class="visual-section__media" src={STOCK_IMAGES.partnershipTeams.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="visual-section__overlay visual-section__overlay--teal"></div>
+    <div class="container">
+      <div class="section-intro">
+        <p class="eyebrow">Our network</p>
+        <h2 class="section-title">Our network: vendors and implementers.</h2>
+        <p class="section-subtitle">We maintain relationships with technology vendors and specialized implementers across the n8n ecosystem.</p>
+      </div>
+      <div class="network-grid">
+        <div class="network-card">
+          <h3>Vendor fit</h3>
+          <p>We help identify the right platform or product before the team commits time or budget.</p>
+        </div>
+        <div class="network-card">
+          <h3>Implementation support</h3>
+          <p>We connect clients with the people who can actually deliver the system cleanly.</p>
+        </div>
+        <div class="network-card">
+          <h3>Partner alignment</h3>
+          <p>We keep the recommendation honest and aligned to the business outcome.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Why Acceler8-ai Section -->
-  <section class="why-section scroll-fade-in" style="background: linear-gradient(135deg, #FFFFFF 0%, rgba(74, 18, 56, 0.03) 100%); position: relative;">
-    <div style="position: absolute; top: 0; left: 0; width: 40%; height: 100%; background-image: url('https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/004.a8Stock.DATA-VIZ.jpg'); background-size: cover; background-position: center; opacity: 0.12; z-index: 0;"></div>
-    <div class="container" style="position: relative; z-index: 1;">
-      <h2 class="section-title">Why Acceler8-ai?</h2>
+  <section class="why-section visual-section visual-section--warm scroll-fade-in">
+    <img class="visual-section__media" src={STOCK_IMAGES.revenueOutcomes.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="visual-section__overlay visual-section__overlay--warm"></div>
+    <div class="container">
+      <div class="section-intro">
+        <p class="eyebrow">Why Acceler8-ai?</p>
+        <h2 class="section-title">Why Acceler8-ai?</h2>
+        <p class="section-subtitle">We focus on workflow problems that move cash, not nice-to-have optimizations.</p>
+      </div>
       <div class="cards-grid stagger-children">
         <div class="card">
           <div class="card-icon">🎯</div>
@@ -128,21 +216,46 @@ declare global {
         </div>
       </div>
     </div>
-    </div>
   </section>
 
-  <!-- Positioning Strip -->
-  <section class="positioning-strip scroll-fade-in">
+  <!-- Insights Strip -->
+  <section id="insights" class="positioning-strip visual-section visual-section--navy scroll-fade-in">
+    <img class="visual-section__media" src={STOCK_IMAGES.insightsDataViz.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="visual-section__overlay visual-section__overlay--navy"></div>
     <div class="container">
-      <p class="positioning-text">Workflow problems that move cash. Solved through technology partnerships and expert implementation.</p>
+      <div class="section-intro section-intro--light">
+        <p class="eyebrow">Insights</p>
+        <h2 class="section-title">Workflow problems that move cash. Measured, connected, and visible.</h2>
+        <p class="section-subtitle">Dashboards and clear handoffs make the impact of the workflow visible enough to improve it.</p>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <strong>Faster</strong>
+          <span>sales and service handoffs</span>
+        </div>
+        <div class="metric-card">
+          <strong>Clearer</strong>
+          <span>operational visibility</span>
+        </div>
+        <div class="metric-card">
+          <strong>Better</strong>
+          <span>workflow decisions</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Closing CTA -->
-  <section class="closing-cta scroll-fade-in">
+  <section class="closing-cta visual-section visual-section--cta scroll-fade-in">
+    <img class="visual-section__media" src={STOCK_IMAGES.closingTexture.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="visual-section__overlay visual-section__overlay--cta"></div>
     <div class="container">
-      <h2 class="section-title">Time to get to work?</h2>
-      <button class="btn btn-primary btn-large" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
+      <div class="cta-panel">
+        <p class="eyebrow">Ready to connect</p>
+        <h2 class="section-title">Time to get to work?</h2>
+        <p class="section-subtitle">Start a Technology Fit Review and get the right next step for your workflow.</p>
+        <button class="btn btn-primary btn-large" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
+      </div>
     </div>
   </section>
 
@@ -165,7 +278,7 @@ declare global {
 
   <style>
     .positioning-strip {
-      background-color: var(--color-acceler8-red);
+      background-color: var(--color-systems-navy);
       color: var(--text-light);
       padding: 2rem 0;
     }
@@ -173,12 +286,10 @@ declare global {
     .positioning-text {
       text-align: center;
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 600;
       margin: 0;
       line-height: 1.5;
       color: var(--text-light);
-      font-family: var(--font-family-base);
-      letter-spacing: -0.01em;
     }
 
     .closing-cta {
@@ -195,43 +306,14 @@ declare global {
     .network-section,
     .why-section,
     .closing-cta {
-      background-color: #FFFFFF;
+      background-color: var(--bg-primary);
     }
 
     .hero {
-      padding: 5rem 0;
-      background-color: #FFFFFF;
+      padding: 3rem 0;
+      background-color: var(--bg-primary);
       position: relative;
       overflow: hidden;
-    }
-
-    .hero-with-image {
-      padding: 6rem 0;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-image-bg {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 55%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 55%;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
-      z-index: 2;
     }
 
     .hero-container {
@@ -242,9 +324,6 @@ declare global {
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: center;
-      position: relative;
-      z-index: 3;
-      width: 50%;
     }
 
     .hero-content {
@@ -380,6 +459,303 @@ declare global {
 
       .workflow-panel {
         padding: 1rem;
+      }
+    }
+
+    .visual-section {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .visual-section__media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .visual-section__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    .visual-section__overlay--hero {
+      background: linear-gradient(120deg, rgba(22, 36, 58, 0.9) 0%, rgba(22, 36, 58, 0.7) 48%, rgba(22, 36, 58, 0.25) 100%);
+    }
+
+    .visual-section__overlay--dark {
+      background: linear-gradient(120deg, rgba(22, 36, 58, 0.92) 0%, rgba(22, 36, 58, 0.72) 100%);
+    }
+
+    .visual-section__overlay--light {
+      background: linear-gradient(120deg, rgba(247, 243, 234, 0.9) 0%, rgba(247, 243, 234, 0.74) 100%);
+    }
+
+    .visual-section__overlay--teal {
+      background: linear-gradient(120deg, rgba(22, 36, 58, 0.9) 0%, rgba(47, 125, 122, 0.58) 100%);
+    }
+
+    .visual-section__overlay--warm {
+      background: linear-gradient(120deg, rgba(22, 36, 58, 0.88) 0%, rgba(182, 106, 58, 0.45) 100%);
+    }
+
+    .visual-section__overlay--navy {
+      background: linear-gradient(120deg, rgba(16, 24, 40, 0.94) 0%, rgba(22, 36, 58, 0.74) 100%);
+    }
+
+    .visual-section__overlay--cta {
+      background: linear-gradient(120deg, rgba(22, 36, 58, 0.92) 0%, rgba(22, 36, 58, 0.7) 100%);
+    }
+
+    .hero.visual-section--hero {
+      min-height: calc(100vh - 88px);
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .visual-section > .container {
+      position: relative;
+      z-index: 1;
+      padding-top: var(--space-4xl);
+      padding-bottom: var(--space-4xl);
+    }
+
+    .eyebrow {
+      margin-bottom: var(--space-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .section-intro {
+      display: grid;
+      gap: var(--space-sm);
+      max-width: 70ch;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .section-intro .section-title {
+      color: var(--text-light);
+      font-size: clamp(1.9rem, 4vw, 3.25rem);
+      line-height: 1.08;
+      margin-bottom: 0;
+    }
+
+    .section-intro .section-subtitle {
+      color: rgba(255, 255, 255, 0.86);
+      margin: 0;
+      font-size: 1.05rem;
+      max-width: 58ch;
+    }
+
+    .section-intro--dark .section-title,
+    .section-intro--dark .section-subtitle,
+    .section-intro--dark .eyebrow {
+      color: var(--text-primary);
+    }
+
+    .section-intro--dark .section-subtitle {
+      color: var(--text-secondary);
+    }
+
+    .section-intro--light .section-title,
+    .section-intro--light .section-subtitle,
+    .section-intro--light .eyebrow {
+      color: var(--text-light);
+    }
+
+    .hero-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: var(--space-2xl);
+      align-items: center;
+      width: 100%;
+      padding-top: var(--space-4xl);
+      padding-bottom: var(--space-4xl);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-panel {
+      width: 100%;
+      padding: var(--space-xl);
+      background: rgba(247, 243, 234, 0.94);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(12px);
+    }
+
+    .panel-kicker {
+      margin-bottom: var(--space-lg);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .panel-card {
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(30, 37, 40, 0.08);
+    }
+
+    .panel-card h3 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .panel-card p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .network-grid,
+    .metrics-grid {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .network-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .network-card,
+    .metric-card {
+      padding: var(--space-xl);
+      border-radius: var(--radius-lg);
+      background: rgba(247, 243, 234, 0.92);
+      border: 1px solid rgba(30, 37, 40, 0.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .network-card h3 {
+      margin-bottom: var(--space-sm);
+      color: var(--text-primary);
+    }
+
+    .network-card p,
+    .metric-card span {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .metrics-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .metric-card {
+      display: grid;
+      gap: var(--space-xs);
+      min-height: 120px;
+      align-content: center;
+    }
+
+    .metric-card strong {
+      color: var(--text-primary);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      line-height: 1;
+    }
+
+    .cta-panel {
+      max-width: 760px;
+      width: 100%;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      background: rgba(22, 36, 58, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-xl);
+      color: var(--text-light);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(12px);
+      text-align: center;
+    }
+
+    .cta-panel .section-title,
+    .cta-panel .section-subtitle,
+    .cta-panel .eyebrow {
+      color: var(--text-light);
+      max-width: none;
+    }
+
+    .cta-panel .btn {
+      margin-top: var(--space-xl);
+    }
+
+    .section-intro .section-title,
+    .section-intro .section-subtitle {
+      max-width: none;
+    }
+
+    .visual-section--hero .hero-headline,
+    .visual-section--hero .hero-subtitle {
+      color: var(--text-light);
+    }
+
+    .visual-section--hero .hero-buttons .btn-secondary {
+      color: var(--text-light);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .visual-section--hero .hero-buttons .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      color: var(--text-light);
+    }
+
+    .visual-section--dark .card,
+    .visual-section--light .card,
+    .visual-section--teal .card,
+    .visual-section--warm .card,
+    .visual-section--navy .card {
+      background: rgba(247, 243, 234, 0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-shell,
+      .network-grid,
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-shell {
+        gap: var(--space-xl);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero.visual-section--hero {
+        min-height: auto;
+      }
+
+      .visual-section > .container,
+      .hero-shell {
+        padding-top: var(--space-3xl);
+        padding-bottom: var(--space-3xl);
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .network-grid,
+      .metrics-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
