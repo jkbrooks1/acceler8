@@ -4,7 +4,7 @@
 export const landingCopy = {
   "spreadsheetTitle": "a8_LandingPage_CANONICAL",
   "spreadsheetId": "1P_yEIR9u9LWoow8q6MB9h5o37N3bOCALUepZsw-zP3U",
-  "pulledAt": "2026-07-03T21:16:06.824Z",
+  "pulledAt": "2026-07-03T21:48:26.016Z",
   "tabCount": 3,
   "tabNames": [
     "NOTES_DO_NOT_USE",
