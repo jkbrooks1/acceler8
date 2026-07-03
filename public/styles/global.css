@@ -1,36 +1,62 @@
-/* Acceler8-ai Design System - Global Styles */
+/* Acceler8-ai Design System v2.0 - Bain-Inspired Consulting Aesthetic */
 
 :root {
-  /* Color Palette */
-  --color-blueprint-ivory: #F7F3EA;
-  --color-executive-charcoal: #1E2528;
-  --color-systems-navy: #16243A;
-  --color-workflow-cobalt: #2563EB;
-  --color-integration-teal: #2F7D7A;
-  --color-revenue-copper: #B66A3A;
-  --color-soft-system-gray: #EEF1F3;
-  --color-warm-stone: #E7DFD1;
-  --color-linework-taupe: #C9BFAA;
-  --color-slate-gray: #5E686B;
+  /* ========== ACCENT COLORS (v2.0) ========== */
+  /* Acceler8 Red Primary Brand */
+  --color-acceler8-red: #D71920;
+  --color-acceler8-red-dark: #B5121B;
+  --color-acceler8-red-bright: #EF2A2A;
 
-  /* Semantic Variables */
-  --bg-primary: var(--color-blueprint-ivory);
-  --bg-card: var(--color-soft-system-gray);
-  --bg-dark: var(--color-systems-navy);
-  --text-primary: var(--color-executive-charcoal);
-  --text-secondary: var(--color-slate-gray);
+  /* Process & Depth Accents */
+  --color-plum-deep: #4A1238;
+  --color-aubergine: #6B1D50;
+  --color-pink-soft: #F4C6D8;
+
+  /* Neutral Palette (v2.0) */
+  --color-black: #111111;
+  --color-charcoal: #333333;
+  --color-gray-mid: #777777;
+  --color-gray-light: #D9D9D9;
+  --color-white-warm: #F4F1EA;
+  --color-white: #FFFFFF;
+
+  /* Legacy colors (deprecated, kept for backwards compatibility) */
+  --color-blueprint-ivory: #FFFFFF;
+  --color-executive-charcoal: #111111;
+  --color-systems-navy: #111111;
+  --color-workflow-cobalt: #D71920;
+  --color-integration-teal: #4A1238;
+  --color-revenue-copper: #D71920;
+  --color-soft-system-gray: #F4F1EA;
+  --color-warm-stone: #FFFFFF;
+  --color-linework-taupe: #D9D9D9;
+  --color-slate-gray: #777777;
+
+  /* Semantic Variables (v2.0) */
+  --bg-primary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F4F1EA;
+  --bg-dark: #111111;
+  --text-primary: #111111;
+  --text-secondary: #333333;
+  --text-tertiary: #777777;
   --text-light: #FFFFFF;
-  --accent-primary: var(--color-workflow-cobalt);
-  --accent-secondary: var(--color-integration-teal);
-  --accent-warm: var(--color-revenue-copper);
-  --border-color: var(--color-linework-taupe);
-  --shadow-sm: 0 1px 2px rgba(30, 37, 40, 0.05);
-  --shadow-md: 0 4px 6px rgba(30, 37, 40, 0.1);
-  --shadow-lg: 0 10px 15px rgba(30, 37, 40, 0.15);
+  --text-on-red: #FFFFFF;
+  --accent-primary: #D71920;
+  --accent-secondary: #4A1238;
+  --accent-warm: #D71920;
+  --border-color: #D9D9D9;
+  --border-emphasis: #111111;
+  --border-red: #D71920;
+  --shadow-sm: 0 1px 2px rgba(17, 17, 17, 0.05);
+  --shadow-md: 0 4px 6px rgba(17, 17, 17, 0.1);
+  --shadow-lg: 0 10px 15px rgba(17, 17, 17, 0.15);
 
-  /* Typography */
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-family-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* Typography (v2.0 - Bain Inspired) */
+  --font-family-base: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-family-heading: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-family-editorial: Georgia, "Times New Roman", serif;
+  --font-family-mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
 
   /* Spacing Scale */
   --space-xs: 0.25rem;
@@ -68,35 +94,38 @@ html {
 body {
   font-family: var(--font-family-base);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography */
+/* Typography (v2.0 - Roboto Condensed primary) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
 }
 
 h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: var(--space-lg);
+  letter-spacing: -0.015em;
 }
 
 h3 {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 p {
@@ -106,13 +135,16 @@ p {
 }
 
 a {
-  color: var(--accent-primary);
-  text-decoration: none;
+  color: var(--color-acceler8-red);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--accent-secondary);
+  color: var(--color-acceler8-red-dark);
+  text-decoration-thickness: 0.12em;
 }
 
 /* Container */
