@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "pull:copy": "node scripts/pull-landing-copy.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",

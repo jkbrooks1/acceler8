@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { landingCopy } from '../data/a8LandingCopy';
 
 declare global {
   interface Window {
@@ -37,259 +38,231 @@ const STOCK_IMAGES = {
     src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/017.a8Stock.GRAPHIC-ELEMENTS.jpg',
   },
 } as const;
+
+const copy = landingCopy.values as Record<string, string>;
+
+const processSteps = [
+  {
+    number: '1',
+    title: copy['how.identify.title'],
+    body: copy['how.identify.body'],
+  },
+  {
+    number: '2',
+    title: copy['how.recommend.title'],
+    body: copy['how.recommend.body'],
+  },
+  {
+    number: '3',
+    title: copy['how.connect.title'],
+    body: copy['how.connect.body'],
+  },
+] as const;
+
+const problemCards = [
+  {
+    number: '1',
+    title: copy['problems.invoice.title'],
+    body: copy['problems.invoice.body'],
+  },
+  {
+    number: '2',
+    title: copy['problems.sales.title'],
+    body: copy['problems.sales.body'],
+  },
+  {
+    number: '3',
+    title: copy['problems.ar.title'],
+    body: copy['problems.ar.body'],
+  },
+  {
+    number: '4',
+    title: copy['problems.scale.title'],
+    body: copy['problems.scale.body'],
+  },
+] as const;
+
+const whyCards = [
+  {
+    number: '1',
+    title: copy['why.revenue.title'],
+    body: copy['why.revenue.body'],
+  },
+  {
+    number: '2',
+    title: copy['why.opinion.title'],
+    body: copy['why.opinion.body'],
+  },
+  {
+    number: '3',
+    title: copy['why.experts.title'],
+    body: copy['why.experts.body'],
+  },
+] as const;
 ---
 
-<Base>
-  <!-- Navigation -->
+<Base title={copy['page.title']} description={copy['meta.description']}>
   <nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-logo">
-        <img src="/assets/logos/v2_Acceler8_Logo_Company.png" alt="Acceler8-ai" class="navbar-logo-img">
-      </div>
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <img src="/assets/logos/v2_Acceler8_Logo_Company.png" alt="Acceler8-ai" class="navbar-logo-img">
+        </div>
       <ul class="nav-menu">
-        <li><a href="#problems">Workflow Problems</a></li>
-        <li><a href="#how-we-work">How We Work</a></li>
-        <li><a href="#network">Our Network</a></li>
-        <li><a href="#insights">Insights</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">{copy['nav.contact']}</a></li>
       </ul>
-      <button class="nav-cta" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Start a Review</button>
+      <button class="nav-cta" onclick="window.location.href='mailto:connect@acceler8-ai.com'">{copy['cta.header']}</button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero visual-section visual-section--hero">
     <img class="visual-section__media" src={STOCK_IMAGES.heroAtmosphere.src} alt="" aria-hidden="true" loading="eager" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--hero"></div>
-    <div class="hero-container hero-shell">
+    <div class="hero-container">
       <div class="hero-content scroll-fade-in">
-        <p class="eyebrow">Acceler8-ai</p>
-        <h1 class="hero-headline">Picking the right workflow tech is hard . . . and it matters</h1>
-        <p class="hero-subtitle">Our clients get the right n8n tech and delivery to solve workflow problems that move the cashflow needle.</p>
+        <h1 class="hero-headline">{copy['hero.headline']}</h1>
+        <p class="hero-subtitle">{copy['hero.subtitle']}</p>
         <div class="hero-buttons">
-          <button class="btn btn-primary" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
-          <button class="btn btn-secondary" onclick="scrollToSection('how-we-work')">See How We Work</button>
+          <button class="btn btn-primary" onclick="window.location.href='mailto:connect@acceler8-ai.com'">{copy['cta.hero_primary']}</button>
+          <button class="btn btn-secondary" onclick="scrollToSection('how-we-work')">{copy['cta.hero_secondary']}</button>
         </div>
       </div>
       <div class="hero-visual scroll-fade-in">
         <div class="workflow-panel hero-panel">
-          <p class="panel-kicker">Workflow focus</p>
           <div class="hero-panel-grid">
-            <div class="panel-card">
-              <div class="service-number">1</div>
-              <h3>Select</h3>
-              <p>Match the problem to the right tools.</p>
-            </div>
-            <div class="panel-card">
-              <div class="service-number">2</div>
-              <h3>Deploy</h3>
-              <p>Put the system into motion cleanly.</p>
-            </div>
-            <div class="panel-card">
-              <div class="service-number">3</div>
-              <h3>Connect</h3>
-              <p>Turn point solutions into working systems.</p>
-            </div>
+            {processSteps.map((step) => (
+              <div class="panel-card">
+                <div class="service-number">{step.number}</div>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Workflow Problems Section -->
   <section id="problems" class="problem-section visual-section visual-section--dark scroll-fade-in">
     <img class="visual-section__media" src={STOCK_IMAGES.workflowSystems.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--dark"></div>
     <div class="container">
       <div class="section-intro">
-        <p class="eyebrow">Workflow problems</p>
-      <h2 class="section-title">Workflow problems where speed and reliability drive revenue.</h2>
-        <p class="section-subtitle">Most teams do not need more software. They need the right tools working together.</p>
+        <h2 class="section-title">{copy['problems.heading']}</h2>
       </div>
       <div class="cards-grid stagger-children">
-        <div class="card">
-          <div class="card-icon">💵</div>
-          <h3>Invoice Creation & Collection</h3>
-          <p>Delayed invoicing extends your cash cycle. Manual processes create errors and delays. Automated, reliable billing moves cash faster.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Sales Cycle Time</h3>
-          <p>Manual follow-up slows deals. Fragmented systems mean lost leads. Connected workflows keep deals moving and opportunities visible.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📞</div>
-          <h3>AR Follow-Up & Retention</h3>
-          <p>Chasing payments and keeping customers engaged requires coordination across teams. Automated workflows ensure nothing falls through the cracks.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💼</div>
-          <h3>Scaling Without Headcount</h3>
-          <p>Growth requires operations to scale faster than your team. Workflow automation lets you grow revenue without proportional cost increases.</p>
-        </div>
+        {problemCards.map((card) => (
+          <div class="card">
+            <div class="service-number">{card.number}</div>
+            <h3>{card.title}</h3>
+            <p>{card.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- How We Work Section -->
   <section id="how-we-work" class="services-section visual-section visual-section--light scroll-fade-in">
     <img class="visual-section__media" src={STOCK_IMAGES.processSystems.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--light"></div>
     <div class="container">
       <div class="section-intro section-intro--dark">
-        <p class="eyebrow">How we work</p>
-        <h2 class="section-title">A practical partner for technology selection, deployment, and connection.</h2>
-        <p class="section-subtitle">We know the n8n ecosystem and we recommend technologies and partners that actually fit the problem.</p>
+        <h2 class="section-title">{copy['how.heading']}</h2>
       </div>
       <div class="cards-grid cards-3col stagger-children">
-        <div class="card card-service">
-          <div class="service-number">1</div>
-          <h3>Identify</h3>
-          <p>We listen. What workflow problems are costing you revenue or operational efficiency? We focus on the high-impact ones: the problems that move the needle.</p>
-        </div>
-        <div class="card card-service">
-          <div class="service-number">2</div>
-          <h3>Recommend</h3>
-          <p>We know the n8n ecosystem. We recommend n8n-compatible technologies and vetted partners that solve your specific problem. Our opinion comes first, always.</p>
-        </div>
-        <div class="card card-service">
-          <div class="service-number">3</div>
-          <h3>Connect</h3>
-          <p>We connect you with implementers—either our services or trusted partners. We handle deployment, adoption, and handoff so you operate the solution successfully.</p>
-        </div>
+        {processSteps.map((step) => (
+          <div class="card card-service">
+            <div class="service-number">{step.number}</div>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Our Network Section -->
   <section id="network" class="network-section visual-section visual-section--teal scroll-fade-in">
     <img class="visual-section__media" src={STOCK_IMAGES.partnershipTeams.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--teal"></div>
     <div class="container">
       <div class="section-intro">
-        <p class="eyebrow">Our network</p>
-        <h2 class="section-title">Our network: vendors and implementers.</h2>
-        <p class="section-subtitle">We maintain relationships with technology vendors and specialized implementers across the n8n ecosystem.</p>
-      </div>
-      <div class="network-grid">
-        <div class="network-card">
-          <h3>Vendor fit</h3>
-          <p>We help identify the right platform or product before the team commits time or budget.</p>
-        </div>
-        <div class="network-card">
-          <h3>Implementation support</h3>
-          <p>We connect clients with the people who can actually deliver the system cleanly.</p>
-        </div>
-        <div class="network-card">
-          <h3>Partner alignment</h3>
-          <p>We keep the recommendation honest and aligned to the business outcome.</p>
-        </div>
+        <h2 class="section-title">{copy['network.heading']}</h2>
+        <p class="section-subtitle">{copy['network.subtitle']}</p>
       </div>
     </div>
   </section>
 
-  <!-- Why Acceler8-ai Section -->
   <section class="why-section visual-section visual-section--warm scroll-fade-in">
     <img class="visual-section__media" src={STOCK_IMAGES.revenueOutcomes.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--warm"></div>
     <div class="container">
       <div class="section-intro">
-        <p class="eyebrow">Why Acceler8-ai?</p>
-        <h2 class="section-title">Why Acceler8-ai?</h2>
-        <p class="section-subtitle">We focus on workflow problems that move cash, not nice-to-have optimizations.</p>
+        <h2 class="section-title">{copy['why.heading']}</h2>
       </div>
       <div class="cards-grid stagger-children">
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <h3>We Know What Drives Revenue</h3>
-          <p>We focus on workflow problems that move cash, not nice-to-have optimizations. Every recommendation ties to revenue or operational impact.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Your Opinion Comes First</h3>
-          <p>We represent technology partners, but our opinion on what's right for your business always comes first. We're incentivized by your success.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🌐</div>
-          <h3>Network of Experts</h3>
-          <p>We match you with implementers who specialize in your specific problem. Whether n8n developers, RevOps experts, or finance operations specialists—we know them.</p>
-        </div>
+        {whyCards.map((card) => (
+          <div class="card">
+            <div class="service-number">{card.number}</div>
+            <h3>{card.title}</h3>
+            <p>{card.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Insights Strip -->
   <section id="insights" class="positioning-strip visual-section visual-section--navy scroll-fade-in">
     <img class="visual-section__media" src={STOCK_IMAGES.insightsDataViz.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--navy"></div>
     <div class="container">
       <div class="section-intro section-intro--light">
-        <p class="eyebrow">Insights</p>
-        <h2 class="section-title">Workflow problems that move cash. Measured, connected, and visible.</h2>
-        <p class="section-subtitle">Dashboards and clear handoffs make the impact of the workflow visible enough to improve it.</p>
-      </div>
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <strong>Faster</strong>
-          <span>sales and service handoffs</span>
-        </div>
-        <div class="metric-card">
-          <strong>Clearer</strong>
-          <span>operational visibility</span>
-        </div>
-        <div class="metric-card">
-          <strong>Better</strong>
-          <span>workflow decisions</span>
-        </div>
+        <p class="positioning-text">{copy['positioning.strip']}</p>
       </div>
     </div>
   </section>
 
-  <!-- Closing CTA -->
   <section class="closing-cta visual-section visual-section--cta scroll-fade-in">
     <img class="visual-section__media" src={STOCK_IMAGES.closingTexture.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--cta"></div>
     <div class="container">
       <div class="cta-panel">
-        <p class="eyebrow">Ready to connect</p>
-        <h2 class="section-title">Time to get to work?</h2>
-        <p class="section-subtitle">Start a Technology Fit Review and get the right next step for your workflow.</p>
-        <button class="btn btn-primary btn-large" onclick="window.location.href='mailto:connect@acceler8-ai.com'">Connect with Acceler8!</button>
+        <h2 class="section-title">{copy['closing.heading']}</h2>
+        <button class="btn btn-primary btn-large" onclick="window.location.href='mailto:connect@acceler8-ai.com'">{copy['cta.closing']}</button>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer id="contact" class="footer">
     <div class="footer-container">
       <div class="footer-section">
-        <h3>Acceler8-ai</h3>
-        <p>Technology selection, deployment, and operations for B2B workflow problems that move cash.</p>
+        <h3>{copy['footer.brand_heading']}</h3>
+        <p>{copy['footer.description']}</p>
       </div>
       <div class="footer-section footer-contact">
-        <p><a href="mailto:connect@acceler8-ai.com">connect@acceler8-ai.com</a></p>
-        <p><a href="tel:206-970-6240">206-970-6240</a></p>
+        <p><a href="mailto:connect@acceler8-ai.com">{copy['footer.email']}</a></p>
+        <p><a href="tel:206-970-6240">{copy['footer.phone']}</a></p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Acceler8-ai. All rights reserved.</p>
+      <p>{copy['footer.copyright']}</p>
     </div>
   </footer>
 
   <style>
     .positioning-strip {
-      background-color: var(--color-systems-navy);
+      background-color: var(--color-acceler8-red);
       color: var(--text-light);
       padding: 2rem 0;
     }
 
     .positioning-text {
       text-align: center;
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      font-weight: 700;
       margin: 0;
       line-height: 1.5;
       color: var(--text-light);
+      font-family: var(--font-family-base);
+      letter-spacing: -0.01em;
     }
 
     .closing-cta {
@@ -306,14 +279,20 @@ const STOCK_IMAGES = {
     .network-section,
     .why-section,
     .closing-cta {
-      background-color: var(--bg-primary);
+      background-color: #FFFFFF;
     }
 
     .hero {
-      padding: 3rem 0;
-      background-color: var(--bg-primary);
+      padding: 5rem 0;
+      background-color: #FFFFFF;
       position: relative;
       overflow: hidden;
+    }
+
+    .hero.visual-section--hero {
+      min-height: 600px;
+      display: flex;
+      align-items: center;
     }
 
     .hero-container {
@@ -324,6 +303,9 @@ const STOCK_IMAGES = {
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: center;
+      position: relative;
+      z-index: 3;
+      width: 100%;
     }
 
     .hero-content {
@@ -360,6 +342,31 @@ const STOCK_IMAGES = {
       padding: 2.5rem;
       box-shadow: var(--shadow-md);
       width: 100%;
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .panel-card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel-card h3 {
+      margin: 0.75rem 0 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .panel-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.65;
     }
 
     .flow-row {
@@ -414,6 +421,10 @@ const STOCK_IMAGES = {
         padding: 1.5rem;
       }
 
+      .hero-panel-grid {
+        grid-template-columns: 1fr;
+      }
+
       .flow-row {
         gap: 0.5rem;
       }
@@ -465,7 +476,6 @@ const STOCK_IMAGES = {
     .visual-section {
       position: relative;
       overflow: hidden;
-      isolation: isolate;
     }
 
     .visual-section__media {
@@ -474,324 +484,168 @@ const STOCK_IMAGES = {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -2;
+      object-position: center;
+      z-index: 0;
     }
 
     .visual-section__overlay {
       position: absolute;
       inset: 0;
-      z-index: -1;
+      z-index: 1;
     }
 
     .visual-section__overlay--hero {
-      background: linear-gradient(120deg, rgba(22, 36, 58, 0.9) 0%, rgba(22, 36, 58, 0.7) 48%, rgba(22, 36, 58, 0.25) 100%);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.82) 52%, rgba(255, 255, 255, 0.15) 100%);
     }
 
     .visual-section__overlay--dark {
-      background: linear-gradient(120deg, rgba(22, 36, 58, 0.92) 0%, rgba(22, 36, 58, 0.72) 100%);
+      background: linear-gradient(135deg, rgba(7, 15, 28, 0.78) 0%, rgba(7, 15, 28, 0.62) 100%);
     }
 
     .visual-section__overlay--light {
-      background: linear-gradient(120deg, rgba(247, 243, 234, 0.9) 0%, rgba(247, 243, 234, 0.74) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.54) 100%);
     }
 
     .visual-section__overlay--teal {
-      background: linear-gradient(120deg, rgba(22, 36, 58, 0.9) 0%, rgba(47, 125, 122, 0.58) 100%);
+      background: linear-gradient(135deg, rgba(10, 72, 76, 0.78) 0%, rgba(10, 72, 76, 0.58) 100%);
     }
 
     .visual-section__overlay--warm {
-      background: linear-gradient(120deg, rgba(22, 36, 58, 0.88) 0%, rgba(182, 106, 58, 0.45) 100%);
+      background: linear-gradient(135deg, rgba(97, 40, 21, 0.78) 0%, rgba(97, 40, 21, 0.56) 100%);
     }
 
     .visual-section__overlay--navy {
-      background: linear-gradient(120deg, rgba(16, 24, 40, 0.94) 0%, rgba(22, 36, 58, 0.74) 100%);
+      background: linear-gradient(135deg, rgba(6, 32, 68, 0.78) 0%, rgba(6, 32, 68, 0.56) 100%);
     }
 
     .visual-section__overlay--cta {
-      background: linear-gradient(120deg, rgba(22, 36, 58, 0.92) 0%, rgba(22, 36, 58, 0.7) 100%);
+      background: linear-gradient(135deg, rgba(94, 44, 17, 0.84) 0%, rgba(94, 44, 17, 0.6) 100%);
     }
 
-    .hero.visual-section--hero {
-      min-height: calc(100vh - 88px);
-      padding: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    .visual-section > .container {
+    .visual-section > .container,
+    .hero-container {
       position: relative;
-      z-index: 1;
-      padding-top: var(--space-4xl);
-      padding-bottom: var(--space-4xl);
-    }
-
-    .eyebrow {
-      margin-bottom: var(--space-sm);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.85);
+      z-index: 2;
     }
 
     .section-intro {
-      display: grid;
-      gap: var(--space-sm);
-      max-width: 70ch;
       margin-bottom: var(--space-2xl);
     }
 
     .section-intro .section-title {
-      color: var(--text-light);
-      font-size: clamp(1.9rem, 4vw, 3.25rem);
-      line-height: 1.08;
+      margin-top: 0;
+      margin-bottom: var(--space-md);
+    }
+
+    .section-intro .section-subtitle {
       margin-bottom: 0;
     }
 
-    .section-intro .section-subtitle {
-      color: rgba(255, 255, 255, 0.86);
-      margin: 0;
-      font-size: 1.05rem;
-      max-width: 58ch;
-    }
-
     .section-intro--dark .section-title,
-    .section-intro--dark .section-subtitle,
-    .section-intro--dark .eyebrow {
-      color: var(--text-primary);
-    }
-
     .section-intro--dark .section-subtitle {
-      color: var(--text-secondary);
+      color: var(--text-primary);
     }
 
     .section-intro--light .section-title,
-    .section-intro--light .section-subtitle,
-    .section-intro--light .eyebrow {
+    .section-intro--light .section-subtitle {
       color: var(--text-light);
     }
 
-    .hero-shell {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-      gap: var(--space-2xl);
-      align-items: center;
-      width: 100%;
-      padding-top: var(--space-4xl);
-      padding-bottom: var(--space-4xl);
-      position: relative;
-      z-index: 1;
+    .section-title {
+      margin-top: 0;
     }
 
-    .hero-panel {
-      width: 100%;
-      padding: var(--space-xl);
-      background: rgba(247, 243, 234, 0.94);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(12px);
-    }
-
-    .panel-kicker {
-      margin-bottom: var(--space-lg);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--accent-primary);
-    }
-
-    .hero-panel-grid {
-      display: grid;
-      gap: var(--space-md);
-    }
-
-    .panel-card {
-      padding: var(--space-lg);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(30, 37, 40, 0.08);
-    }
-
-    .panel-card h3 {
-      margin-bottom: var(--space-sm);
-    }
-
-    .panel-card p {
-      margin: 0;
-      color: var(--text-secondary);
-    }
-
-    .network-grid,
-    .metrics-grid {
+    .cards-grid {
       display: grid;
       gap: var(--space-lg);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
-    .network-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .cards-3col {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
-    .network-card,
-    .metric-card {
-      padding: var(--space-xl);
-      border-radius: var(--radius-lg);
-      background: rgba(247, 243, 234, 0.92);
-      border: 1px solid rgba(30, 37, 40, 0.08);
-      box-shadow: var(--shadow-md);
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
     }
 
-    .network-card h3 {
-      margin-bottom: var(--space-sm);
+    .card h3 {
+      margin: 0.75rem 0 0.5rem;
       color: var(--text-primary);
     }
 
-    .network-card p,
-    .metric-card span {
+    .card p {
       margin: 0;
+      line-height: 1.7;
       color: var(--text-secondary);
     }
 
-    .metrics-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .metric-card {
-      display: grid;
-      gap: var(--space-xs);
-      min-height: 120px;
-      align-content: center;
-    }
-
-    .metric-card strong {
-      color: var(--text-primary);
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      line-height: 1;
+    .service-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 999px;
+      background: rgba(215, 25, 32, 0.12);
+      color: var(--color-acceler8-red);
+      font-weight: 700;
+      font-size: 0.95rem;
     }
 
     .cta-panel {
-      max-width: 760px;
-      width: 100%;
-      padding: clamp(1.5rem, 4vw, 3rem);
-      background: rgba(22, 36, 58, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-xl);
-      color: var(--text-light);
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(12px);
-      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
 
-    .cta-panel .section-title,
-    .cta-panel .section-subtitle,
-    .cta-panel .eyebrow {
-      color: var(--text-light);
-      max-width: none;
-    }
-
-    .cta-panel .btn {
-      margin-top: var(--space-xl);
-    }
-
-    .section-intro .section-title,
-    .section-intro .section-subtitle {
-      max-width: none;
-    }
-
-    .visual-section--hero .hero-headline,
-    .visual-section--hero .hero-subtitle {
-      color: var(--text-light);
-    }
-
-    .visual-section--hero .hero-buttons .btn-secondary {
-      color: var(--text-light);
-      border-color: rgba(255, 255, 255, 0.6);
-    }
-
-    .visual-section--hero .hero-buttons .btn-secondary:hover {
-      background-color: rgba(255, 255, 255, 0.12);
-      color: var(--text-light);
-    }
-
-    .visual-section--dark .card,
-    .visual-section--light .card,
-    .visual-section--teal .card,
-    .visual-section--warm .card,
-    .visual-section--navy .card {
-      background: rgba(247, 243, 234, 0.92);
-      backdrop-filter: blur(12px);
+    .footer {
+      background: #fff;
     }
 
     @media (max-width: 1024px) {
-      .hero-shell,
-      .network-grid,
-      .metrics-grid {
+      .hero-container {
         grid-template-columns: 1fr;
       }
 
-      .hero-shell {
-        gap: var(--space-xl);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero.visual-section--hero {
-        min-height: auto;
-      }
-
-      .visual-section > .container,
-      .hero-shell {
-        padding-top: var(--space-3xl);
-        padding-bottom: var(--space-3xl);
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons .btn {
-        width: 100%;
-      }
-
-      .network-grid,
-      .metrics-grid {
+      .cards-grid {
         grid-template-columns: 1fr;
       }
     }
   </style>
 
   <script>
-    function scrollToSection(id: string) {
+    const scrollToSection = (id: string): void => {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }
-    window.scrollToSection = scrollToSection;
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
     };
 
+    window.scrollToSection = scrollToSection;
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
           observer.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    });
 
-    document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right').forEach(el => {
+    document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right').forEach((el) => {
       observer.observe(el);
     });
 
-    // Stagger animations for cards
-    document.querySelectorAll('.stagger-children').forEach(container => {
-      const children = container.querySelectorAll(':scope > *');
-      children.forEach((child, index) => {
+    document.querySelectorAll('.stagger-children').forEach((container) => {
+      container.querySelectorAll(':scope > *').forEach((child, index) => {
         if (child instanceof HTMLElement) {
           child.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1 + 0.2}s backwards`;
         }
