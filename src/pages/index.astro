@@ -26,12 +26,12 @@ const STOCK_IMAGES = {
     src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/013.a8Stock.TEAMS.jpg',
   },
   revenueOutcomes: {
-    filename: '006.a8Stock.REVENUE.jpg',
-    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/006.a8Stock.REVENUE.jpg',
-  },
-  insightsDataViz: {
     filename: '004.a8Stock.DATA-VIZ.jpg',
     src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/004.a8Stock.DATA-VIZ.jpg',
+  },
+  insightsDataViz: {
+    filename: '006.a8Stock.REVENUE.jpg',
+    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/006.a8Stock.REVENUE.jpg',
   },
   closingTexture: {
     filename: '017.a8Stock.GRAPHIC-ELEMENTS.jpg',
@@ -184,18 +184,18 @@ const whyCards = [
     <img class="visual-section__media" src={STOCK_IMAGES.partnershipTeams.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="visual-section__overlay visual-section__overlay--teal"></div>
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro section-intro--light section-panel">
         <h2 class="section-title">{copy['network.heading']}</h2>
         <p class="section-subtitle">{copy['network.subtitle']}</p>
       </div>
     </div>
   </section>
 
-  <section class="why-section visual-section visual-section--warm scroll-fade-in">
+  <section class="why-section visual-section visual-section--light scroll-fade-in">
     <img class="visual-section__media" src={STOCK_IMAGES.revenueOutcomes.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <div class="visual-section__overlay visual-section__overlay--warm"></div>
+    <div class="visual-section__overlay visual-section__overlay--light"></div>
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro section-intro--dark section-panel">
         <h2 class="section-title">{copy['why.heading']}</h2>
       </div>
       <div class="cards-grid stagger-children">
@@ -249,17 +249,17 @@ const whyCards = [
 
   <style>
     .positioning-strip {
-      background-color: var(--color-acceler8-red);
+      background-color: var(--color-systems-navy);
       color: var(--text-light);
-      padding: 2rem 0;
+      padding: 2.5rem 0;
     }
 
     .positioning-text {
       text-align: center;
-      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
       font-weight: 700;
       margin: 0;
-      line-height: 1.5;
+      line-height: 1.6;
       color: var(--text-light);
       font-family: var(--font-family-base);
       letter-spacing: -0.01em;
@@ -317,16 +317,16 @@ const whyCards = [
     .hero-headline {
       color: var(--text-primary);
       margin-bottom: var(--space-lg);
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.8rem, 5.8vw, 4.8rem);
       font-weight: 700;
       line-height: 1.2;
     }
 
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       color: var(--text-secondary);
       margin-bottom: var(--space-2xl);
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     .hero-visual {
@@ -336,10 +336,10 @@ const whyCards = [
     }
 
     .workflow-panel {
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(47, 125, 122, 0.05) 100%);
+      background: linear-gradient(135deg, rgba(29, 78, 216, 0.08) 0%, rgba(15, 23, 42, 0.06) 100%);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-xl);
-      padding: 2.5rem;
+      padding: 2.25rem;
       box-shadow: var(--shadow-md);
       width: 100%;
     }
@@ -351,10 +351,10 @@ const whyCards = [
     }
 
     .panel-card {
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(15, 23, 42, 0.1);
       border-radius: var(--radius-lg);
-      padding: 1.25rem;
+      padding: 1.4rem;
       box-shadow: var(--shadow-sm);
     }
 
@@ -366,7 +366,8 @@ const whyCards = [
     .panel-card p {
       margin: 0;
       color: var(--text-secondary);
-      line-height: 1.65;
+      line-height: 1.75;
+      font-size: 1rem;
     }
 
     .flow-row {
@@ -387,12 +388,12 @@ const whyCards = [
     }
 
     .flow-icon {
-      font-size: 2.5rem;
+      font-size: 2rem;
       display: block;
     }
 
     .flow-label {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text-primary);
       margin: 0;
@@ -495,31 +496,27 @@ const whyCards = [
     }
 
     .visual-section__overlay--hero {
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.82) 52%, rgba(255, 255, 255, 0.15) 100%);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.88) 52%, rgba(255, 255, 255, 0.08) 100%);
     }
 
     .visual-section__overlay--dark {
-      background: linear-gradient(135deg, rgba(7, 15, 28, 0.78) 0%, rgba(7, 15, 28, 0.62) 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.72) 100%);
     }
 
     .visual-section__overlay--light {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.54) 100%);
+      background: linear-gradient(135deg, rgba(244, 247, 251, 0.8) 0%, rgba(255, 255, 255, 0.68) 100%);
     }
 
     .visual-section__overlay--teal {
-      background: linear-gradient(135deg, rgba(10, 72, 76, 0.78) 0%, rgba(10, 72, 76, 0.58) 100%);
-    }
-
-    .visual-section__overlay--warm {
-      background: linear-gradient(135deg, rgba(97, 40, 21, 0.78) 0%, rgba(97, 40, 21, 0.56) 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(29, 78, 216, 0.45) 100%);
     }
 
     .visual-section__overlay--navy {
-      background: linear-gradient(135deg, rgba(6, 32, 68, 0.78) 0%, rgba(6, 32, 68, 0.56) 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.72) 100%);
     }
 
     .visual-section__overlay--cta {
-      background: linear-gradient(135deg, rgba(94, 44, 17, 0.84) 0%, rgba(94, 44, 17, 0.6) 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(29, 78, 216, 0.72) 100%);
     }
 
     .visual-section > .container,
@@ -551,6 +548,29 @@ const whyCards = [
       color: var(--text-light);
     }
 
+    .section-panel {
+      padding: var(--space-xl);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .section-intro--light.section-panel {
+      background: rgba(15, 23, 42, 0.78);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .section-intro--light.section-panel .section-title,
+    .section-intro--light.section-panel .section-subtitle {
+      color: var(--text-light);
+    }
+
+    .section-intro--dark.section-panel .section-title,
+    .section-intro--dark.section-panel .section-subtitle {
+      color: var(--text-primary);
+    }
+
     .section-title {
       margin-top: 0;
     }
@@ -566,10 +586,10 @@ const whyCards = [
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(15, 23, 42, 0.1);
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(15, 23, 42, 0.08);
       border-radius: var(--radius-xl);
-      padding: 1.5rem;
+      padding: 1.75rem;
       box-shadow: var(--shadow-sm);
     }
 
@@ -580,21 +600,22 @@ const whyCards = [
 
     .card p {
       margin: 0;
-      line-height: 1.7;
+      line-height: 1.8;
       color: var(--text-secondary);
+      font-size: 1rem;
     }
 
     .service-number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2.25rem;
-      height: 2.25rem;
+      width: 2.5rem;
+      height: 2.5rem;
       border-radius: 999px;
-      background: rgba(215, 25, 32, 0.12);
-      color: var(--color-acceler8-red);
+      background: rgba(29, 78, 216, 0.12);
+      color: var(--color-acceler8-blue);
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
     .cta-panel {
@@ -604,7 +625,7 @@ const whyCards = [
     }
 
     .footer {
-      background: #fff;
+      background: var(--color-cool-off-white);
     }
 
     @media (max-width: 1024px) {
@@ -614,6 +635,24 @@ const whyCards = [
 
       .cards-grid {
         grid-template-columns: 1fr;
+      }
+
+      .hero-headline {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-headline {
+        font-size: 2.25rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .positioning-text {
+        font-size: 1.35rem;
       }
     }
   </style>

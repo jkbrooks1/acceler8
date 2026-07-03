@@ -1,53 +1,51 @@
-/* Acceler8-ai Design System v2.0 - Bain-Inspired Consulting Aesthetic */
+/* Acceler8-ai Design System v3.0 - Blue/Navy Workflow Systems */
 
 :root {
-  /* ========== ACCENT COLORS (v2.0) ========== */
-  /* Acceler8 Red Primary Brand */
-  --color-acceler8-red: #D71920;
-  --color-acceler8-red-dark: #B5121B;
-  --color-acceler8-red-bright: #EF2A2A;
+  /* ========== V3 PALETTE ========== */
+  --color-acceler8-blue: #1D4ED8;
+  --color-acceler8-blue-dark: #1E3A8A;
+  --color-acceler8-blue-bright: #3B82F6;
+  --color-systems-navy: #0F172A;
+  --color-workflow-cyan: #0E7490;
+  --color-soft-workflow-blue: #DBEAFE;
+  --color-pale-system-blue: #EFF6FF;
+  --color-cool-off-white: #F4F7FB;
 
-  /* Process & Depth Accents */
-  --color-plum-deep: #4A1238;
-  --color-aubergine: #6B1D50;
-  --color-pink-soft: #F4C6D8;
-
-  /* Neutral Palette (v2.0) */
+  /* Neutral Palette */
   --color-black: #111111;
   --color-charcoal: #333333;
   --color-gray-mid: #777777;
   --color-gray-light: #D9D9D9;
-  --color-white-warm: #F4F1EA;
+  --color-white-warm: #F4F7FB;
   --color-white: #FFFFFF;
 
   /* Legacy colors (deprecated, kept for backwards compatibility) */
-  --color-blueprint-ivory: #FFFFFF;
+  --color-blueprint-ivory: #F4F7FB;
   --color-executive-charcoal: #111111;
-  --color-systems-navy: #111111;
-  --color-workflow-cobalt: #D71920;
-  --color-integration-teal: #4A1238;
-  --color-revenue-copper: #D71920;
-  --color-soft-system-gray: #F4F1EA;
-  --color-warm-stone: #FFFFFF;
+  --color-workflow-cobalt: #1D4ED8;
+  --color-integration-teal: #0E7490;
+  --color-revenue-copper: #1E3A8A;
+  --color-soft-system-gray: #EFF6FF;
+  --color-warm-stone: #F4F7FB;
   --color-linework-taupe: #D9D9D9;
   --color-slate-gray: #777777;
 
   /* Semantic Variables (v2.0) */
   --bg-primary: #FFFFFF;
   --bg-card: #FFFFFF;
-  --bg-subtle: #F4F1EA;
-  --bg-dark: #111111;
+  --bg-subtle: #F4F7FB;
+  --bg-dark: #0F172A;
   --text-primary: #111111;
   --text-secondary: #333333;
   --text-tertiary: #777777;
   --text-light: #FFFFFF;
   --text-on-red: #FFFFFF;
-  --accent-primary: #D71920;
-  --accent-secondary: #4A1238;
-  --accent-warm: #D71920;
+  --accent-primary: #1D4ED8;
+  --accent-secondary: #0F172A;
+  --accent-warm: #0E7490;
   --border-color: #D9D9D9;
   --border-emphasis: #111111;
-  --border-red: #D71920;
+  --border-red: #1D4ED8;
   --shadow-sm: 0 1px 2px rgba(17, 17, 17, 0.05);
   --shadow-md: 0 4px 6px rgba(17, 17, 17, 0.1);
   --shadow-lg: 0 10px 15px rgba(17, 17, 17, 0.15);
@@ -93,10 +91,10 @@ html {
 
 body {
   font-family: var(--font-family-base);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.65;
   color: var(--text-primary);
-  background-color: #FFFFFF;
+  background-color: var(--color-cool-off-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -111,31 +109,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.6rem, 5.5vw, 4.75rem);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 800;
   margin-bottom: var(--space-lg);
   letter-spacing: -0.015em;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
   font-weight: 700;
 }
 
 p {
   margin-bottom: var(--space-md);
   color: var(--text-primary);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 a {
-  color: var(--color-acceler8-red);
+  color: var(--accent-primary);
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
@@ -143,7 +141,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-acceler8-red-dark);
+  color: var(--accent-secondary);
   text-decoration-thickness: 0.12em;
 }
 
@@ -165,12 +163,12 @@ a:hover {
 
 /* Sections */
 section {
-  padding: var(--space-2xl) 0;
+  padding: clamp(3rem, 5vw, 5rem) 0;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: var(--space-xl) 0;
+    padding: var(--space-2xl) 0;
   }
 }
 

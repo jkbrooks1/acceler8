@@ -4,7 +4,7 @@
 export const landingCopy = {
   "spreadsheetTitle": "a8_LandingPage_CANONICAL",
   "spreadsheetId": "1P_yEIR9u9LWoow8q6MB9h5o37N3bOCALUepZsw-zP3U",
-  "pulledAt": "2026-07-03T21:48:26.016Z",
+  "pulledAt": "2026-07-03T22:26:48.361Z",
   "tabCount": 3,
   "tabNames": [
     "NOTES_DO_NOT_USE",
@@ -39,7 +39,7 @@ export const landingCopy = {
     "problems.scale.body": "Scale your operation faster than you have to scale your team.",
     "how.heading": "Acceler8-ai",
     "how.identify.title": "Identify",
-    "how.identify.body": "We listen. We talk about processes that troublemakers.",
+    "how.identify.body": "We listen. We talk about processes that are troublemakers.",
     "how.recommend.title": "Recommend",
     "how.recommend.body": "We know the n8n ecosystem. We recommend n8n tech, approaches and vetted partners to solve your specific problem.",
     "how.connect.title": "Connect",
