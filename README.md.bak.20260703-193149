@@ -10,7 +10,7 @@ This repository contains the generated public proofsheet output for Acceler8-ai 
 - Canonical stock photo folder: `/Users/jkbrookspersonal/Library/CloudStorage/GoogleDrive-jb@acceler8-ai.com/My Drive/a8_Root/06a8_Marketing_Promotion/03_Brand_Assets/Stock_Photos`
 - Naming convention: `XXX.a8Stock.BUCKET.ext`
 - Approved buckets: `TEAMS`, `SYSTEMS`, `REVENUE`, `DATA-VIZ`, `GRAPHIC-ELEMENTS`
-- R2 bucket: `proofsheetbucketbb`
+- R2 bucket: `proofsheetbucketb`
 - R2 public base URL: `https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev`
 - Proofsheet GitHub output: `/Users/jkbrookspersonal/Projects/acceler8/public/proofsheet/index.html`
 - Proofsheet live URL: `https://proofsheet.acceler8-ai.com`
@@ -43,7 +43,7 @@ curl -fsSL https://proofsheet.acceler8-ai.com -o /tmp/proofsheet_live_doc_check.
 - `proofsheet` command not found: confirm the shell alias resolves to the canonical processor path.
 - Wrong alias path: both aliases should run the same Python script.
 - Missing R2 env vars: load the required `R2_*` variables before running the processor.
-- `NoSuchBucket`: confirm the bucket is `proofsheetbucketbb`, not `proofsheetbucketb`.
+- `NoSuchBucket`: confirm the bucket is `proofsheetbucketb`, not `proofsheetbucket`.
 - Live page shows filenames but not images: verify the R2 URLs return HTTP 200 and check the deployed HTML, not just the local build.
 - `GOOGLE_APPLICATION_CREDENTIALS` points to an old path: reset it to `/Users/jkbrookspersonal/.config/acceler8-ai/google/service-account.json`.
 
