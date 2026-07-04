@@ -29,10 +29,6 @@ const STOCK_IMAGES = {
     filename: '004.a8Stock.DATA-VIZ.jpg',
     src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/004.a8Stock.DATA-VIZ.jpg',
   },
-  insightsDataViz: {
-    filename: '006.a8Stock.REVENUE.jpg',
-    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/006.a8Stock.REVENUE.jpg',
-  },
   closingTexture: {
     filename: '017.a8Stock.GRAPHIC-ELEMENTS.jpg',
     src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/017.a8Stock.GRAPHIC-ELEMENTS.jpg',
@@ -211,10 +207,9 @@ const whyCards = [
   </section>
 
   <section id="insights" class="positioning-strip visual-section visual-section--navy scroll-fade-in">
-    <img class="visual-section__media" src={STOCK_IMAGES.insightsDataViz.src} alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <div class="visual-section__overlay visual-section__overlay--navy"></div>
+    <div class="positioning-strip__backdrop" aria-hidden="true"></div>
     <div class="container">
-      <div class="section-intro section-intro--light">
+      <div class="section-intro section-intro--light section-panel positioning-strip__panel">
         <p class="positioning-text">{copy['positioning.strip']}</p>
       </div>
     </div>
@@ -249,14 +244,40 @@ const whyCards = [
 
   <style>
     .positioning-strip {
-      background-color: var(--color-systems-navy);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(59, 130, 246, 0.16) 0, rgba(59, 130, 246, 0) 30%),
+        radial-gradient(circle at 82% 80%, rgba(14, 116, 144, 0.18) 0, rgba(14, 116, 144, 0) 34%),
+        linear-gradient(135deg, #0f172a 0%, #13213f 52%, #1e3a8a 100%);
       color: var(--text-light);
       padding: 2.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .positioning-strip__backdrop {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 40%),
+        linear-gradient(0deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.1));
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .positioning-strip__panel {
+      position: relative;
+      z-index: 1;
+      max-width: 56rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 2.25rem;
+      background: rgba(15, 23, 42, 0.82);
+      border-color: rgba(255, 255, 255, 0.12);
     }
 
     .positioning-text {
       text-align: center;
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-size: clamp(1.5rem, 2.6vw, 2.05rem);
       font-weight: 700;
       margin: 0;
       line-height: 1.6;
@@ -312,6 +333,8 @@ const whyCards = [
       display: flex;
       flex-direction: column;
       justify-content: center;
+      max-width: 36rem;
+      min-width: 0;
     }
 
     .hero-headline {
@@ -320,19 +343,22 @@ const whyCards = [
       font-size: clamp(2.8rem, 5.8vw, 4.8rem);
       font-weight: 700;
       line-height: 1.2;
+      max-width: 12ch;
     }
 
     .hero-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: var(--text-secondary);
       margin-bottom: var(--space-2xl);
       line-height: 1.85;
+      max-width: 34rem;
     }
 
     .hero-visual {
       display: flex;
       align-items: center;
       justify-content: center;
+      min-width: 0;
     }
 
     .workflow-panel {
@@ -356,6 +382,8 @@ const whyCards = [
       border-radius: var(--radius-lg);
       padding: 1.4rem;
       box-shadow: var(--shadow-sm);
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .panel-card h3 {
@@ -367,7 +395,7 @@ const whyCards = [
       margin: 0;
       color: var(--text-secondary);
       line-height: 1.75;
-      font-size: 1rem;
+      font-size: 1.06rem;
     }
 
     .flow-row {
@@ -527,6 +555,9 @@ const whyCards = [
 
     .section-intro {
       margin-bottom: var(--space-2xl);
+      max-width: 54rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-intro .section-title {
@@ -573,16 +604,18 @@ const whyCards = [
 
     .section-title {
       margin-top: 0;
+      max-width: 16ch;
+      overflow-wrap: anywhere;
     }
 
     .cards-grid {
       display: grid;
       gap: var(--space-lg);
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
     .cards-3col {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
     .card {
@@ -591,6 +624,8 @@ const whyCards = [
       border-radius: var(--radius-xl);
       padding: 1.75rem;
       box-shadow: var(--shadow-sm);
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .card h3 {
@@ -602,7 +637,7 @@ const whyCards = [
       margin: 0;
       line-height: 1.8;
       color: var(--text-secondary);
-      font-size: 1rem;
+      font-size: 1.06rem;
     }
 
     .service-number {
@@ -638,21 +673,21 @@ const whyCards = [
       }
 
       .hero-headline {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
     }
 
     @media (max-width: 640px) {
       .hero-headline {
-        font-size: 2.25rem;
+        font-size: 2.35rem;
       }
 
       .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.08rem;
       }
 
       .positioning-text {
-        font-size: 1.35rem;
+        font-size: 1.4rem;
       }
     }
   </style>

@@ -91,7 +91,7 @@ html {
 
 body {
   font-family: var(--font-family-base);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.65;
   color: var(--text-primary);
   background-color: var(--color-cool-off-white);
@@ -109,27 +109,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2.6rem, 5.5vw, 4.75rem);
+  font-size: clamp(2.9rem, 5.9vw, 5.1rem);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
   font-weight: 800;
   margin-bottom: var(--space-lg);
   letter-spacing: -0.015em;
 }
 
 h3 {
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-size: clamp(1.45rem, 2.6vw, 2.1rem);
   font-weight: 700;
 }
 
 p {
   margin-bottom: var(--space-md);
   color: var(--text-primary);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 a {
