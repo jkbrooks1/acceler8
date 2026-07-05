@@ -1,82 +1,74 @@
-/* Acceler8-ai Design System v3.0 - Blue/Navy Workflow Systems */
+/* Acceler8-ai v3.0 - Blue Workflow Systems / Modern Consulting Aesthetic */
 
 :root {
-  /* ========== V3 PALETTE ========== */
+  --acceler8-style-version: "2026-q3.v3.0";
+
+  --font-primary: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-editorial: Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+
   --color-acceler8-blue: #1D4ED8;
   --color-acceler8-blue-dark: #1E3A8A;
   --color-acceler8-blue-bright: #3B82F6;
   --color-systems-navy: #0F172A;
-  --color-workflow-cyan: #0E7490;
-  --color-soft-workflow-blue: #DBEAFE;
-  --color-pale-system-blue: #EFF6FF;
-  --color-cool-off-white: #F4F7FB;
 
-  /* Neutral Palette */
+  --color-workflow-cyan: #0E7490;
+  --color-slate-blue: #1E293B;
+  --color-soft-blue: #DBEAFE;
+  --color-pale-blue: #EFF6FF;
+
   --color-black: #111111;
   --color-charcoal: #333333;
   --color-gray-mid: #777777;
   --color-gray-light: #D9D9D9;
-  --color-white-warm: #F4F7FB;
+  --color-white-cool: #F4F7FB;
   --color-white: #FFFFFF;
 
-  /* Legacy colors (deprecated, kept for backwards compatibility) */
-  --color-blueprint-ivory: #F4F7FB;
-  --color-executive-charcoal: #111111;
-  --color-workflow-cobalt: #1D4ED8;
-  --color-integration-teal: #0E7490;
-  --color-revenue-copper: #1E3A8A;
-  --color-soft-system-gray: #EFF6FF;
-  --color-warm-stone: #F4F7FB;
-  --color-linework-taupe: #D9D9D9;
-  --color-slate-gray: #777777;
-
-  /* Semantic Variables (v2.0) */
-  --bg-primary: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --bg-subtle: #F4F7FB;
-  --bg-dark: #0F172A;
   --text-primary: #111111;
   --text-secondary: #333333;
   --text-tertiary: #777777;
   --text-light: #FFFFFF;
-  --text-on-red: #FFFFFF;
-  --accent-primary: #1D4ED8;
-  --accent-secondary: #0F172A;
-  --accent-warm: #0E7490;
-  --border-color: #D9D9D9;
+  --text-on-blue: #FFFFFF;
+
+  --bg-page: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F4F7FB;
+  --bg-blue-subtle: #EFF6FF;
+  --bg-dark: #0F172A;
+
+  --border-default: #D9D9D9;
   --border-emphasis: #111111;
-  --border-red: #1D4ED8;
-  --shadow-sm: 0 1px 2px rgba(17, 17, 17, 0.05);
-  --shadow-md: 0 4px 6px rgba(17, 17, 17, 0.1);
-  --shadow-lg: 0 10px 15px rgba(17, 17, 17, 0.15);
+  --border-blue: #1D4ED8;
+  --border-cyan: #0E7490;
 
-  /* Typography (v2.0 - Bain Inspired) */
-  --font-family-base: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-  --font-family-heading: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-  --font-family-editorial: Georgia, "Times New Roman", serif;
-  --font-family-mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 10px 15px rgba(15, 23, 42, 0.15);
 
-  /* Spacing Scale */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  --space-4xl: 5rem;
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
 
-  /* Border Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
 
-  /* Breakpoints */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  /* Backwards-compatible aliases used by existing components. */
+  --bg-primary: var(--bg-page);
+  --bg-card-alt: var(--bg-card);
+  --accent-primary: var(--color-acceler8-blue);
+  --accent-secondary: var(--color-acceler8-blue-dark);
+  --accent-warm: var(--color-workflow-cyan);
+  --border-color: var(--border-default);
+  --border-emphasis-alt: var(--border-emphasis);
+  --font-family-base: var(--font-primary);
+  --font-family-heading: var(--font-primary);
+  --font-family-editorial: var(--font-editorial);
+  --font-family-mono: var(--font-mono);
 }
 
 * {
@@ -90,46 +82,43 @@ html {
 }
 
 body {
-  font-family: var(--font-family-base);
-  font-size: 19px;
-  line-height: 1.65;
+  font-family: var(--font-primary);
+  font-size: 17px;
+  line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--color-cool-off-white);
+  background-color: var(--bg-page);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography (v2.0 - Roboto Condensed primary) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: var(--space-md);
-  letter-spacing: -0.01em;
-}
-
-h1 {
-  font-size: clamp(2.9rem, 5.9vw, 5.1rem);
+  font-family: var(--font-primary);
   font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
   letter-spacing: -0.02em;
 }
 
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
 h2 {
-  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
-  font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.1;
   margin-bottom: var(--space-lg);
-  letter-spacing: -0.015em;
 }
 
 h3 {
-  font-size: clamp(1.45rem, 2.6vw, 2.1rem);
-  font-weight: 700;
+  font-size: clamp(1.2rem, 2.1vw, 1.5rem);
 }
 
 p {
   margin-bottom: var(--space-md);
-  color: var(--text-primary);
-  line-height: 1.85;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 a {
@@ -163,7 +152,7 @@ a:hover {
 
 /* Sections */
 section {
-  padding: clamp(3rem, 5vw, 5rem) 0;
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
 }
 
 @media (max-width: 768px) {
@@ -209,6 +198,11 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-blue);
+  outline-offset: 3px;
 }
 
 /* Utilities */

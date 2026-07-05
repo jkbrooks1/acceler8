@@ -5,7 +5,7 @@ import { spawnSync } from 'node:child_process';
 
 const ROOT = path.resolve(new URL('.', import.meta.url).pathname, '..');
 const EXPORT_PATH = '/tmp/canonical_acceler8_landing_sheet_export.txt';
-const PULL_LAND = '/Users/jkbrookspersonal/.local/bin/PullLand';
+const PULL_LAND = process.env.PULL_LAND_BIN || 'PullLand';
 const SHEET_ID = '1P_yEIR9u9LWoow8q6MB9h5o37N3bOCALUepZsw-zP3U';
 const OUTPUT_PATH = path.join(ROOT, 'src/data/a8LandingCopy.ts');
 

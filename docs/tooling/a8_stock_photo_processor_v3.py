@@ -46,7 +46,7 @@ R2_ACCESS_KEY = os.getenv("R2_ACCESS_KEY_ID")
 R2_SECRET_KEY = os.getenv("R2_SECRET_ACCESS_KEY")
 R2_ACCOUNT_ID = os.getenv("R2_ACCOUNT_ID")
 R2_BUCKET_NAME = os.getenv("R2_BUCKET_NAME", "proofsheetbucketb")
-R2_PUBLIC_URL = os.getenv("R2_PUBLIC_URL", "https://pub-9198ddc0d68148d1b70f092a9916e996.r2.dev")
+R2_PUBLIC_URL = os.getenv("R2_PUBLIC_URL", "https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev")
 R2_ENDPOINT = f"https://{R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 
 # Colors for output
