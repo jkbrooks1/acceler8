@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import { landingCopy } from '../data/a8LandingCopy';
 
 const copy = landingCopy.values as Record<string, string>;
+const assets = landingCopy.graphicAssets as Record<string, string>;
 
 const processSteps = [
   { number: '1', title: copy['how.identify.title'], body: copy['how.identify.body'] },
@@ -25,8 +26,8 @@ const whyCards = [
 
 const images = {
   hero: {
-    src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/021.a8Stock.GRAPHIC-ELEMENTS.jpg',
-    alt: 'Abstract blue and navy graphic elements arranged in layered bands.',
+    src: assets['a8_HeroImage'],
+    alt: 'Black and white wildebeest river crossing landscape photograph.',
   },
   problems: {
     src: 'https://pub-906aebdaaf22471faa576c94c2cdf07b.r2.dev/024.a8Stock.GRAPHIC-ELEMENTS.jpg',
@@ -54,7 +55,14 @@ const images = {
 <Base title={copy['page.title']} description={copy['meta.description']}>
   <nav class="topbar" aria-label="Primary">
     <div class="topbar__inner">
-      <a class="brand" href="#top">Acceler8-ai</a>
+      <a href="/" class="topbar__logo">
+        <img
+          src={assets['a8_LogoOnTransp']}
+          alt="Acceler8-ai logo"
+          class="rounded-lg"
+          style={{ maxWidth: '270px', maxHeight: '360px', width: 'auto', height: 'auto', display: 'block' }}
+        />
+      </a>
       <div class="topbar__actions">
         <a class="topbar__link" href="#contact">{copy['nav.contact']}</a>
         <a class="btn btn-primary" href={`mailto:${copy['footer.email']}`}>{copy['cta.header']}</a>
@@ -267,6 +275,19 @@ const images = {
     font-size: 1.15rem;
     font-weight: 800;
     letter-spacing: -0.03em;
+  }
+
+  .topbar__logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .topbar__logo img {
+    max-width: 270px;
+    max-height: 360px;
+    width: auto;
+    height: auto;
   }
 
   .topbar__actions {
